@@ -77,9 +77,10 @@ public class Main {
 //        System.out.println(b5 || b6 && b7);
 
         int v1 = 10;
-        int v2 = 3;
+        int v2 = 7;
         int v3 = 4;
         int v4 = 5;
+        44
 
         if ((v1 % v2 == 1) && (v1 % v3 == 2)) {
             System.out.println("OK");

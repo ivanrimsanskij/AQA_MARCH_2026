@@ -15,7 +15,7 @@ public class HomeWork2 {
         for (int i = 0; i < emails.length; i++) {
             String pochta = emails[i];
 
-            if (pochta.lastIndexOf("@") == pochta.indexOf("@") && (pochta.indexOf("@") > 3)
+            if ((pochta.lastIndexOf("@") == pochta.indexOf("@")) && (pochta.indexOf("@") > 3)
                     && ((pochta.lastIndexOf(".") - pochta.indexOf("@") > 3) && pochta.contains("@") && pochta.contains("."))
                     && (pochta.split("@"))[1].contains(".")) {
                 System.out.println("valid email: " + pochta);

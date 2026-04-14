@@ -1,3 +1,4 @@
+package org.prog.session3;
 import java.util.Arrays;
 
 public class HomeWorkIvan3 {

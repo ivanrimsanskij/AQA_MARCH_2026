@@ -1,5 +1,3 @@
-package org.prog.session9;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -12,15 +10,16 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class HomeWorkIvan9 {
-    private WebDriver driver;
+    public WebDriver driver;
 
     @BeforeSuite
     private void beforeSuite() {
+
         driver = new ChromeDriver();
     }
 
    @Test
-   private void test() {
+   public void test() {
        driver.get("https://allo.ua");
        WebElement searchInput = driver.findElement(By.id("search-form__input"));
        searchInput.click();
@@ -39,7 +38,7 @@ public class HomeWorkIvan9 {
    }
 
     @AfterSuite
-    private void afterSuite() {
+    public void afterSuite() {
         driver.quit();
     }
 }

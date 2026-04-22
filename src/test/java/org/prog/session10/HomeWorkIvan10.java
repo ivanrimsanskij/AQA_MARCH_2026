@@ -40,7 +40,7 @@ public class HomeWorkIvan10 {
         WebDriverWait wait = new WebDriverWait(alloPage.driver, Duration.ofSeconds(5L));
 
         List<WebElement> iphoneElements = alloPage.getIphoneElements();
-        
+
         if (iphoneElements.isEmpty()) {
             return;
         }

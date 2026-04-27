@@ -11,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.matchesRegex;
 
-public class HomeWorkIvan11 {
+public class RestTest {
 
     @Test
     public void testRest() {

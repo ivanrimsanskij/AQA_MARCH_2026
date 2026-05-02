@@ -2,6 +2,7 @@ package org.prog.session13;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterSuite;
@@ -28,6 +29,7 @@ public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
         options.addArguments("--disable-popup-blocking");
 
         driver = new ChromeDriver(options);
+        driver.manage().window().setSize(new Dimension(1920, 1080));
         Selenium.alloPage = new AlloPage3(driver);
         connection = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/iphones", "root", "12345");

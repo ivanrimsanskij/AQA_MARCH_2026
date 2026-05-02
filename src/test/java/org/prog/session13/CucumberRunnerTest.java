@@ -18,7 +18,7 @@ import static org.prog.session13.Selenium.driver;
         features = "src/test/resources"
 )
 
-public class CucumberRunner extends AbstractTestNGCucumberTests {
+public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
     @BeforeSuite
     private void beforeSuite() throws Exception {
         ChromeOptions options = new ChromeOptions();

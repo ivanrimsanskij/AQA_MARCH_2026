@@ -3,7 +3,7 @@
 <suite name="Suite1" verbose="1">
     <test name="tests pack 1">
         <classes>
-            <class name="org.prog.session16.codedriven.CodeDrivenTests"/>
+            <class name="org.prog.session13.CucumberRunnerTest"/>
         </classes>
     </test>
     <listeners>

@@ -17,8 +17,8 @@ public class Db {
                 "VALUES (?, ?)");
 
         for (int i = 0; i < names.size(); i++) {
-            preparedStatement.setString(1, codes.get(i));
-            preparedStatement.setString(2, names.get(i));
+            preparedStatement.setString(1, names.get(i));
+            preparedStatement.setString(2, codes.get(i));
             preparedStatement.execute();
         }
         System.out.println("WOW");

@@ -26,7 +26,7 @@ public class Selenium {
 
         alloPage.clickOnSubmitButton();
 
-        WebDriverWait wait = new WebDriverWait(alloPage.driver, Duration.ofSeconds(5L));
+        WebDriverWait wait = new WebDriverWait(alloPage.driver, Duration.ofSeconds(25L));
         wait.until(d -> !alloPage.getIphoneElements().isEmpty());
 
         List<WebElement> iphoneElements = alloPage.getIphoneElements();

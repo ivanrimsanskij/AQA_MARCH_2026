@@ -28,8 +28,6 @@ public class Selenium {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("product-sku__value")));
 
-        ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("window.scrollBy(0,500)");
-
         List<String> codes = alloPage.hasItemCode("product-sku__value", amount);
         List<String> names = alloPage.hasNameProduct("product-card__title", amount);
 

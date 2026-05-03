@@ -18,8 +18,8 @@ public class Db {
 
         for (int i = 0; i < codes.size(); i++) {
             System.out.println("Writing to DB: Name = " + names.get(i) + ", Code = " + codes.get(i));
-            preparedStatement.setString(1, names.get(i));
-            preparedStatement.setString(2, codes.get(i));
+            preparedStatement.setString(1, codes.get(i));
+            preparedStatement.setString(2, names.get(i));
             preparedStatement.execute();
         }
         System.out.println("WOW");

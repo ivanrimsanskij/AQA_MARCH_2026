@@ -30,7 +30,6 @@ public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
         options.addArguments("--window-size=1920,1080");
 
         driver = new ChromeDriver(options);
-        driver.manage().window().setSize(new Dimension(1920, 1080));
         Selenium.alloPage = new AlloPage3(driver);
         connection = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/iphones", "root", "12345");

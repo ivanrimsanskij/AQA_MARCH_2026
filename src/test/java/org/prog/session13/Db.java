@@ -13,6 +13,10 @@ public class Db {
         List<String> codes = (List<String>) DataManager.DATA.get("iphone_codes");
         List<String> names = (List<String>) DataManager.DATA.get("iphone_names");
 
+        System.out.println("DEBUG: Names count: " + (names != null ? names.size() : "null"));
+        System.out.println("DEBUG: Codes count: " + (codes != null ? codes.size() : "null"));
+
+
         PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO iphones (Code, name) " +
                 "VALUES (?, ?)");
 

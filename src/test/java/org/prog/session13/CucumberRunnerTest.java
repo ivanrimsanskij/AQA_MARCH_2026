@@ -28,6 +28,7 @@ public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
         options.addArguments("--start-maximized");
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--window-size=1920,1080");
+        options.addArguments("--disable-blink-features=AutomationControlled");
 
         driver = new ChromeDriver(options);
         Selenium.alloPage = new AlloPage3(driver);

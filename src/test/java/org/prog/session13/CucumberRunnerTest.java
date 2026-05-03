@@ -25,6 +25,7 @@ public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
         ChromeOptions options = new ChromeOptions();
 
         options.addArguments("--disable-notifications");
+        options.addArguments("--headless");
         options.addArguments("--start-maximized");
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--window-size=1920,1080");

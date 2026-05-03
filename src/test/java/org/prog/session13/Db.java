@@ -16,7 +16,7 @@ public class Db {
         PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO iphones (Code, name) " +
                 "VALUES (?, ?)");
 
-        for (int i = 0; i < names.size(); i++) {
+        for (int i = 0; i < codes.size(); i++) {
             System.out.println("Writing to DB: Name = " + names.get(i) + ", Code = " + codes.get(i));
             preparedStatement.setString(1, names.get(i));
             preparedStatement.setString(2, codes.get(i));

@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.sql.Connection;
@@ -24,12 +25,8 @@ public class Selenium {
         alloPage.pasteValue(input, "iphone");
         alloPage.clickOnSubmitButton();
 
-        WebDriverWait wait = new WebDriverWait(alloPage.driver, Duration.ofSeconds(25L));
-
-        wait.until(d -> {
-            List<WebElement> codes = d.findElements(By.className("product-sku__value"));
-            return !codes.isEmpty() && !codes.get(0).getText().isEmpty();
-        });
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("product-sku__value")));
 
         List<String> codes = alloPage.hasItemCode("product-sku__value", amount);
         List<String> names = alloPage.hasNameProduct("product-card__title", amount);

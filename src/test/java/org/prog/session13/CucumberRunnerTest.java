@@ -27,6 +27,7 @@ public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
         options.addArguments("--disable-notifications");
         options.addArguments("--start-maximized");
         options.addArguments("--disable-popup-blocking");
+        options.addArguments("--window-size=1920,1080");
 
         driver = new ChromeDriver(options);
         driver.manage().window().setSize(new Dimension(1920, 1080));

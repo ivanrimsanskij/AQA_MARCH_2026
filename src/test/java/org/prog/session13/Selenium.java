@@ -33,7 +33,7 @@ public class Selenium {
 
         List<String> codes = alloPage.hasItemCode("product-sku__value", amount);
         List<String> names = alloPage.hasNameProduct("product-card__title", amount);
-        
+
         DataManager.DATA.put("iphone_codes", codes);
         DataManager.DATA.put("iphone_names", names);
     }

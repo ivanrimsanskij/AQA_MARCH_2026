@@ -25,11 +25,12 @@ public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
         ChromeOptions options = new ChromeOptions();
 
         options.addArguments("--disable-notifications");
-        options.addArguments("--headless");
+        options.addArguments("--headless=new");
+        options.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36");
+        options.addArguments("--no-sandbox");
         options.addArguments("--start-maximized");
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--window-size=1920,1080");
-        options.addArguments("--disable-blink-features=AutomationControlled");
 
         driver = new ChromeDriver(options);
         Selenium.alloPage = new AlloPage3(driver);

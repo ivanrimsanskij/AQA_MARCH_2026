@@ -4,7 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,7 +23,9 @@ public class AlloPage3 {
         }
 
         public WebElement clickOnSearchInput() {
-            WebElement searchInput = driver.findElement(By.id("search-form__input"));
+
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement searchInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("search-form__input")));
             searchInput.click();
 
             return searchInput;
@@ -41,18 +46,17 @@ public class AlloPage3 {
             return driver.findElements(By.className("product-card"));
         }
 
-        public List <String> hasItemCode(String cssClass, int limit) {
-            Actions actions = new Actions(driver);
-            return getIphoneElements().stream()
-                    .limit(limit)
-                    .map(item -> {
-                        actions.moveToElement(item).perform();
-
-                        WebElement codeElement = item.findElement(By.className("product-sku__value"));
-                        return codeElement.getText();
-                    })
-                    .collect(Collectors.toList());
-        }
+    public List<String> hasItemCode(String cssClass, int limit) {
+        Actions actions = new Actions(driver);
+        return getIphoneElements().stream()
+                .limit(limit)
+                .map(item -> {
+                    actions.moveToElement(item).perform();
+                    WebElement codeElement = item.findElement(By.className("product-sku__value"));
+                    return codeElement.getAttribute("textContent");
+                })
+                .collect(Collectors.toList());
+    }
         public List <String> hasNameProduct(String cssClass, int limit) {
             return getIphoneElements().stream()
                     .limit(limit)
